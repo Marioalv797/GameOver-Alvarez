@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <header>
+        <ul class="nav">
+            <img  class="logo" src="images/logo.png" width="200px"alt="">
+            <div class="searcher-campo">
+                <input id="buscador" class="searcher" type="text" name="search" placeholder="Buscador">
+            </div>
+            <div class="carrito">
+                <p id="numero" class="color">
+                   <span>
+                       0
+                   </span>
+                </p>
+                <button id="boton-carrito"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></button>
+            </div>
+        </ul>
+    </header>
+
+    <main>
+        <aside class="menu">
+            <ul id="producto">
+                <li id="todos">Todos</li>
+                <li id="monitor">Monitores</li>
+                <li id="cpu">CPU</li>
+                <li id="ram">Memoria RAM</li>
+                <li id="disco">Disco Duro</li>
+                <li id="fuente">Fuentes</li>
+                <li id="mouse">Mouses</li>
+                <li id="teclado">Teclados</li>
+            </ul>
+        </aside>
+        
+        <article id="cards-space">
+
+        </article>
+    </main>
+
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <div id="carrito-contenedor">
+                 
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+        </div>
+    </div>
+
+    <footer></footer>
+ 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/stock.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/localstorage.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

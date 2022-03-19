@@ -1,0 +1,176 @@
+@import url(modal.css);
+
+*, *:before, *::after
+{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+.color
+{
+    background-color: #fd611a;
+}
+
+.nav
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.49);
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.49);
+}
+
+.logo
+{
+    margin-top: 15px;
+}
+
+#boton-carrito
+{
+    text-decoration:none;
+    background-color:#fff;
+    border: solid 1px #fff;
+}
+
+input.searcher
+{
+    width: /*1241px*/ 600px;
+    border-radius: 5px;
+    border: 2px solid #e2e2e2;
+    padding: 9px 10px 9px 36px;
+    background: #fff url("../images/search-icon.png") no-repeat 9px center;
+}
+
+input.searcher:hover
+{
+    border: 2px solid black;
+    transition: .4s;
+}
+
+#numero
+{
+    font-family: Montserrat,sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    position: absolute;
+    margin-left: 30px;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+}
+
+#boton-carrito:hover
+{
+    cursor: pointer;
+}
+
+main
+{
+    display: flex;
+    justify-content: center;
+}
+
+.menu
+{
+    width: 390px;
+    height: 410px;
+    margin: 10px 20px 0 0;
+    border-radius: 4px;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.49);
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.49);
+}
+
+.menu ul li
+{
+    margin: 20px;
+    padding: 5px;
+    list-style: none;
+}
+
+.menu ul li:hover
+{
+    cursor: pointer;
+    background-color: rgba(237, 238, 238, 0.658);
+}
+
+.menu ul li
+{
+    font-family: Montserrat,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+}
+
+#cards-space
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.cards
+{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 780px;
+    height: 152px;
+    border-radius: 4px;    
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.49);
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.49);
+}
+
+.cards img
+{
+    margin-left: 50px;
+}
+
+.cards-text
+{
+    margin-left: 20px;
+}
+
+.titulo
+{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: Montserrat, sans-serif;
+}
+
+.precio
+{
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    font-family: Montserrat, sans-serif;
+    color: #4675b9;
+}
+
+.boton
+{
+    width: 170px;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.boton:hover
+{
+    cursor: pointer;
+}
