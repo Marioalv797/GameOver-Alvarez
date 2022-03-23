@@ -37,6 +37,11 @@
     margin-top: 0;
 }
 
+.modal-carrito::-webkit-scrollbar
+{
+    width: 10px;
+}
+
 .modal-carrito h3 
 {
     color: #fd611a;
@@ -103,4 +108,15 @@
 {
     cursor: pointer;
     color: #fd611a;
+}
+
+.modal-precio
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+#comprar
+{
+    background-color: #12a85d;
 }

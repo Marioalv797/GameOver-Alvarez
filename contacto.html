@@ -26,31 +26,25 @@
                    </span>
                 </p>
                 <button id="boton-carrito"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></button>
-
-                <a class="contacto" href="contacto.html">
-                    <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+            
+                <a class="contacto" href="index.html">
+                    <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
                 </a>
             </div>
         </ul>
     </header>
 
     <main>
-        <aside class="menu">
-            <ul id="producto">
-                <li id="todos">Todos</li>
-                <li id="monitor">Monitores</li>
-                <li id="cpu">CPU</li>
-                <li id="ram">Memoria RAM</li>
-                <li id="disco">Disco Duro</li>
-                <li id="fuente">Fuentes</li>
-                <li id="mouse">Mouses</li>
-                <li id="teclado">Teclados</li>
-            </ul>
-        </aside>
-        
-        <article id="cards-space">
+        <form type="submit" class="form-register">
+            <h4>Contactanos</h4>
+            <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre" required="">
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" required="">
+            <select class="controls" style="width:100%" name="paises" id="paises"></select>
+            <textarea class="controls" name="texto" id="texto" cols="30" rows="5" required=""></textarea>
+            <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+            <input id="enviar" class="botons" type="submit" value="Enviar">
+        </form>
 
-        </article>
     </main>
 
     <div class="modal-contenedor">
@@ -66,14 +60,11 @@
             </div>
         </div>
     </div>
- 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="js/filter.js"></script>
     <script src="js/modal.js"></script>
-    <script src="js/carrito.js"></script>
-    <script src="js/mostrarProductos.js"></script>
     <script src="js/localstorage.js"></script>
+    <script src="js/carrito.js"></script>
     <script src="js/stock.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/contacto.js"></script>
 </body>
 </html>

@@ -1,32 +1,8 @@
-// IMPRIMIR PRODUCTOS
-function mostrarProductos (array)
-{
-    cardsSpace.innerHTML = ""
-    array.forEach(element => 
-    {
-        let div = document.createElement('div')
-        div.innerHTML = 
-        `<div class="cards">
-            <img src="${element.img}" alt="imagen">
-            <div class="cards-text">
-                <h1 class="titulo">${element.nombre}</h1>
-                <h3 class="precio">$ ${element.precio}</h3>
-                <button id="boton${element.id}" class="boton color">Añadir al carrito</button>
-            </div>
-        </div>`
-
-        cardsSpace.appendChild(div)
-
-        let acumulador = document.getElementById(`boton${element.id}`)
-        acumulador.addEventListener('click', () => 
-        {
-            alCarrito(element.id)
-        })
-    });
-}
-
-
 // AGREGAR ITEMS AL CARRITO
+const numCarrito = document.getElementById('numero')
+const carritoContenedor = document.getElementById('carrito-contenedor')
+let precio = document.getElementById('precioTotal')
+
 function alCarrito (id)
 {
     let agregarCompra = stock.find (item => item.id == id)
@@ -36,22 +12,7 @@ function alCarrito (id)
     if (carrito.filter(el => el.id == id).length < 1)
     {
         carrito.push(agregarCompra)
-
-        let div = document.createElement('div')
-
-        div.className = 'productoEnCarrito'
-        div.innerHTML =
-        `
-            <div><img src="${agregarCompra.img}"></div>
-            <div class="texto">
-            <h4>${agregarCompra.nombre}</h4> <br>
-            <p>Precio: $${agregarCompra.precio}</p> <br>
-            <p id = "cantidad${agregarCompra.id}">Cantidad: ${agregarCompra.cantidad}</p> <br>
-            </div>
-            <button class="boton-eliminar" id="btnEliminar${agregarCompra.id}"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-        `
-
-        carritoContenedor.appendChild(div)
+        agregaralCarrito(agregarCompra)
     }
 
     else
@@ -74,10 +35,27 @@ function alCarrito (id)
         }
     }).showToast();
         
-        
-        actualizarCarrito()
-        eliminardelCarrito(agregarCompra)
-    }
+    actualizarCarrito()
+    eliminardelCarrito(agregarCompra)
+}
+
+function agregaralCarrito(element)
+{
+    let div = document.createElement('div')
+    div.className = 'productoEnCarrito'
+    div.innerHTML =
+    `
+        <div><img src="${element.img}"></div>
+        <div class="texto">
+        <h4>${element.nombre}</h4> <br>
+        <p>Precio: $${element.precio}</p> <br>
+        <p id = "cantidad${element.id}">Cantidad: ${element.cantidad}</p> <br>
+        </div>
+        <button class="boton-eliminar" id="btnEliminar${element.id}"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+    `
+
+    carritoContenedor.appendChild(div)
+}
 
 function eliminardelCarrito(eliminarCompra)
 {
@@ -90,6 +68,41 @@ function eliminardelCarrito(eliminarCompra)
         carrito = carrito.filter (el => el.id != eliminarCompra.id)
         actualizarCarrito()
     })
+}
+
+function realizarCompra ()
+{
+    if(carrito.length > 0)
+    {
+        setTimeout(() => {
+            contenedorModal.classList.toggle('modal-power')
+        }, 1500);
+        carrito.length = 0
+        carritoContenedor.innerHTML=""
+        actualizarCarrito()
+        Toastify({
+            text: "✅ Se realizó la compra",
+            duration: 2000,
+            style:{
+                background: "#f5e4bb",
+                fontFamily: "Montserrat, sans-serif",
+                color: "black"
+            }
+        }).showToast();
+    }
+    
+    else
+    {
+        Toastify({
+            text: "❌ No tienes nada en el carrito",
+            duration: 2000,
+            style:{
+                background: "#f5e4bb",
+                fontFamily: "Montserrat, sans-serif",
+                color: "black"
+            }
+        }).showToast();
+    }
 }
 
 function actualizarCarrito ()

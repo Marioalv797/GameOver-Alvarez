@@ -6,20 +6,15 @@ const enter = document.getElementById('buscador')
 filtro.addEventListener("click", e =>
 {
     if(e.target && e.target.nodeName == "LI") 
-    {
-        if (e.target.id == 'todos')
-            mostrarProductos(stock)
-
-        else
-            mostrarProductos(stock.filter(el => el.tipo == e.target.id))
-    }
+        e.target.id == 'todos' ? mostrarProductos(stock) : mostrarProductos(stock.filter(el => el.tipo == e.target.id))            
+    
 });
 
 // FILTER DE INPUT
 
 enter.addEventListener("keypress", e => {
-    let texto = (document.getElementById('buscador').value).toLowerCase()
 
+    let texto = (document.getElementById('buscador').value).toLowerCase()
     if (e.key == 'Enter')
     {
         if (texto == 'monitor' || texto == 'monitores')
